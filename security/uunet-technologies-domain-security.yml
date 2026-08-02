@@ -1,0 +1,71 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of legacy UUNET domains (uu.net, uunet.com, uunet.net)
+note: UUNET is a defunct brand (folded into Verizon Business). Its legacy DNS zones
+  remain operated by Verizon; web hosts serve only an HTTP 301 redirect to
+  https://www.verizon.com/business/ and do not serve HTTPS at all. Absence of
+  records below is real probed data, not a gap in probing.
+hosts:
+- host: www.uu.net
+  dns: CNAME global.mci.com -> hostredirects.vzbtest.info -> 52.34.155.72
+  https: false
+  http_status: 301
+  http_redirect: https://www.verizon.com/business/
+  hsts: false
+- host: www.uunet.com
+  dns: CNAME global.mci.com -> hostredirects.vzbtest.info -> 52.34.155.72
+  https: false
+  http_status: 301
+  http_redirect: https://www.verizon.com/business/
+  hsts: false
+- host: uu.net
+  dns: no A record (NS + MX only)
+  https: false
+- host: uunet.com
+  dns: no A record (NS + MX only)
+  https: false
+- host: ftp.uu.net
+  dns: 192.48.96.9 (historic archive host A record still published)
+  https: false
+domains:
+- domain: uu.net
+  nameservers:
+  - auth00.ns.uu.net
+  - auth60.ns.uu.net
+  - auth200.ns.uu.net
+  - auth210.ns.uu.net
+  mx:
+  - 15 omzsmtpe01.verizonbusiness.com
+  - 15 omzsmtpe02.verizonbusiness.com
+  - 15 omzsmtpe03.verizonbusiness.com
+  - 15 omzsmtpe04.verizonbusiness.com
+  - 30 fldsmtpe01.verizon.com
+  - 30 fldsmtpe02.verizon.com
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+- domain: uunet.com
+  nameservers:
+  - auth01.ns.uu.net
+  - auth50.ns.uu.net
+  - auth61.ns.uu.net
+  - auth-ns1.verizonbusiness.com
+  - auth-ns2.verizonbusiness.com
+  mx:
+  - 10 mailstation.uu.net
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+- domain: uunet.net
+  nameservers:
+  - auth03.ns.uu.net
+  - auth50.ns.uu.net
+  dnssec: false
+  spf: false
+  dmarc: false
+well_known:
+- path: /.well-known/security.txt
+  host: www.uu.net
+  status: unreachable (no HTTPS listener; HTTP 301s to verizon.com)

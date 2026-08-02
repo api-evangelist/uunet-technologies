@@ -1,7 +1,26 @@
 aid: uunet-technologies
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uunet-technologies.png
 name: UUNET Technologies
-description: UUNET Technologies is a company surfaced as a portfolio company of accel and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: UUNET Technologies was one of the first commercial Internet service
+  providers, founded in 1987 by Rick Adams in Virginia to commercialize Usenet and
+  email, launching the AlterNet IP backbone in 1990. Backed by Accel Partners,
+  Menlo Ventures, and NEA, it IPO'd on NASDAQ in 1995, was acquired by MFS
+  Communications for $2B in 1996, which WorldCom bought that same year; after the
+  MCI merger and Verizon's 2006 acquisition the UUNET brand was retired into
+  Verizon Business. The brand is defunct today - its legacy domains (uu.net,
+  uunet.com) remain Verizon-operated DNS zones whose web hosts only redirect to
+  verizon.com/business, and it publishes no APIs or developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/uunet-technologies/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +28,29 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: defunct
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Internet Service Provider
+- Networking
+- Telecommunications
+- Internet Backbone
+- Defunct
 apis: []
+common:
+- name: UUNET Domain Security Posture
+  type: DomainSecurity
+  url: security/uunet-technologies-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
